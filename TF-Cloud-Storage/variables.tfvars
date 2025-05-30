@@ -1,0 +1,1 @@
+ARM_USE_OIDC = "true"
