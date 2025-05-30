@@ -5,6 +5,6 @@ terraform {
 
     workspaces { 
       name = "tfworkflowplan01" 
-    } 
+    }
   } 
 }
