@@ -1,11 +1,6 @@
 
 provider "azurerm" {
   features {}
-
-  use_oidc = true
-  client_id = "4eb64827-89a9-4e67-a282-f6c592fbd3d2"
-  tenant_id = "fa3f5c87-6b26-4240-9f12-c4679a19fed9"
-  subscription_id = "6e83f8e1-bcf9-4cf5-8eb2-c9585391d4ee"
 }
 
 resource "azurerm_resource_group" "tfstate" {

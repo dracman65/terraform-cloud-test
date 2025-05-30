@@ -1,10 +1,10 @@
-terraform { 
-  cloud { 
+# terraform { 
+#   cloud { 
     
-    organization = "smoker65" 
+#     organization = "smoker65" 
 
-    workspaces { 
-      name = "tfworkflowplan01" 
-    }
-  } 
-}
+#     workspaces { 
+#       name = "tfworkflowplan01" 
+#     }
+#   } 
+# }
