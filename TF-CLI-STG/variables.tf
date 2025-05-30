@@ -1,3 +1,6 @@
+##################################
+### Variables ##
+
 variable "resource_group" {
   type        = string
   default     = "storageacctdsd10"

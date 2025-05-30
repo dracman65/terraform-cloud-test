@@ -7,7 +7,7 @@ URL's
 
 */
 
-### Providers ###
+### Providers - Non-Cloud ###
 # terraform {
 #   #required_version = ">=1.2"
 
@@ -22,6 +22,17 @@ URL's
 #     }
 #   }
 # }
+
+##################################
+### Providers - Cloud Backend ###
+terraform { 
+  cloud {    
+    organization = "DSD-Terraform-Test"
+    workspaces { 
+      name = "Tf-Cloud-CLI" 
+    } 
+  } 
+}
 provider "azurerm" {
   # subscription_id = "6e83f8e1-bcf9-4cf5-8eb2-c9585391d4ee"
   # tenant_id       = "fa3f5c87-6b26-4240-9f12-c4679a19fed9"
@@ -30,17 +41,7 @@ provider "azurerm" {
   features {}
 }
 
-terraform { 
-  cloud { 
-    
-    organization = "DSD-Terraform-Test" 
-
-    workspaces { 
-      name = "Tf-Cloud-CLI" 
-    } 
-  } 
-}
-
+##################################
 ### Resource Group and Location ###
 resource "azurerm_resource_group" "example" {
   name     = var.resource_group
@@ -52,6 +53,8 @@ resource "random_string" "stg" {
   upper   = false
   special = false
 }
+
+##################################
 ### Storage Account ##
 resource "azurerm_storage_account" "storage1" {
   name                     = "octo-${random_string.stg.result}"
@@ -66,6 +69,7 @@ resource "azurerm_storage_account" "storage1" {
   }
 }
 
+##################################
 ### Container ###
 resource "azurerm_storage_container" "azstgcont01" {
   name                  = "octowkblb01"
