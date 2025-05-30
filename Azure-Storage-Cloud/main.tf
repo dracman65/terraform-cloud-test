@@ -13,11 +13,11 @@ terraform {
 
   required_providers {
     azurerm = {
-      source  = "hashicorp/azurerm"
+      source = "hashicorp/azurerm"
       #version = "> 3.0"
     }
     random = {
-      source  = "hashicorp/random"
+      source = "hashicorp/random"
       #version = "> 3.0"
     }
   }
@@ -26,7 +26,7 @@ provider "azurerm" {
   # subscription_id = "6e83f8e1-bcf9-4cf5-8eb2-c9585391d4ee"
   # tenant_id       = "fa3f5c87-6b26-4240-9f12-c4679a19fed9"
   oidc_request_token = true
-  use_oidc = true
+  use_oidc           = true
   features {}
 }
 
@@ -58,6 +58,6 @@ resource "azurerm_storage_account" "storage1" {
 ### Container ###
 resource "azurerm_storage_container" "azstgcont01" {
   name                  = "octowkblb01"
-  storage_account_id = azurerm_storage_account.storage1.id
+  storage_account_id    = azurerm_storage_account.storage1.id
   container_access_type = "blob"
 }
