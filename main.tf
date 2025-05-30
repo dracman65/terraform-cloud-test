@@ -61,15 +61,3 @@ resource "azurerm_storage_container" "azstgcont01" {
   storage_account_id = azurerm_storage_account.storage1.id
   container_access_type = "blob"
 }
-
-variable "resource_group" {
-  type        = string
-  default     = "storageacctdsd10"
-  description = "Resource Group Name."
-}
-
-variable "location" {
-  type        = string
-  default     = "eastus2"
-  description = "(optional) describe your variable"
-}
