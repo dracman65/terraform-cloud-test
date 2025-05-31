@@ -21,8 +21,8 @@
 
 provider "aws" {
   region                   = var.aws_region
-#   shared_credentials_files = ["C:/Users/Digital_Dave/.aws/credentials"]
-  profile                  = "default"
+  shared_credentials_files = ["C:/Users/Digital_Dave/.aws/credentials"]
+  #profile                  = "default"
   allowed_account_ids      = [var.aws_account_id]
 }
 
